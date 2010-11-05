@@ -121,7 +121,7 @@ gc_free_termios (SCM x)
   gp = (struct termios *) SCM_SMOB_DATA (x);
 
   assert (gp != NULL);
-  if (0)
+  if (1)
     {
       fprintf (stderr, "Freeing termios at %p\n", gp);
       fprintf (stderr, "Flags: I %u O %u C %u L %u\n", gp->c_iflag,
@@ -129,6 +129,7 @@ gc_free_termios (SCM x)
       fprintf (stderr, "Speed: O %u I %u\n", cfgetospeed(gp),
                cfgetispeed(gp));
       fflush (stderr);
+      sleep (1);
     }
 
   scm_gc_free (gp, sizeof (struct termios), "termios");

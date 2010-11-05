@@ -146,13 +146,14 @@
 
             termios?
             new-termios
-
+	    sigprocmask
             cfgetispeed
             cfgetospeed
             cfmakeraw!
             cfsetispeed!
             cfsetspeed!
             cfsetospeed!
+            sigprocmask
             tcdrain
             tcflow
             tcflush
@@ -269,6 +270,6 @@
                 (display "------: Newline does line-feed but does not Carriage Return.\n")
                 (display "------: Carriage Return returns to column 0 but does not line feed\n")))))
     ))
-    
-                  
+
+
 (load-extension "libguile-ncurses" "gucu_extra_init")
